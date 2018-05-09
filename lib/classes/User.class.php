@@ -304,7 +304,7 @@
             $conn = Db::getInstance();
             $statement = $conn->prepare("
                 INSERT INTO tl_user (first_name, last_name, username)
-                VALUES (:firstName, :lastName, :username, :email)
+                VALUES (:firstName, :lastName, :username)
             ");
 
            
@@ -312,11 +312,8 @@
             $statement->bindValue(":firstName", "");
             $statement->bindValue(":lastName", "");
             $statement->bindValue(":username", $this->getUsername());
-            
-
-            //$result = 
             $statement->execute();
-            //var_dump($result);
+
             
         }
     

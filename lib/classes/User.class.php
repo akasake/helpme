@@ -277,23 +277,42 @@
             }
         }
 
+
+        // first log in, you are asigned a unique username
+        public function login(){
+            $conn = Db::getInstance();
+            $statement = $conn->prepare("
+                SELECT id FROM tl_user WHERE username = :username 
+            ");
+
+            $statement->bindValue(":username", $this->getUsername());
+            $statement->execute();
+
+            $result = $statement->fetch(PDO::FETCH_OBJ);
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+            $_SESSION['id'] = $result->id;
+            header('Location: index.php');
+        }
+
         /** 
-         * Function to register the user
+         * Function to assign a unique username 
         */
 
         public function register(){
             $conn = Db::getInstance();
             $statement = $conn->prepare("
-                INSERT INTO tl_user (first_name, last_name, username, email)
+                INSERT INTO tl_user (first_name, last_name, username)
                 VALUES (:firstName, :lastName, :username, :email)
             ");
 
            
 
-            $statement->bindValue(":firstName", $this->getFirstName());
-            $statement->bindValue(":lastName", $this->getLastName());
+            $statement->bindValue(":firstName", "");
+            $statement->bindValue(":lastName", "");
             $statement->bindValue(":username", $this->getUsername());
-            $statement->bindValue(":email", $this->getEmail());
+            
 
             //$result = 
             $statement->execute();

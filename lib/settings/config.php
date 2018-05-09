@@ -1,7 +1,20 @@
 <?php
-    // * Do not place user only code here for performance!
+    // Only start a session if one hasn't been started yes
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
-    // * Place user only code here!
+    // registers user
+    if(!isset($_SESSION['id'])) {
+        $u = new User;
+        $username = rand(0,100).".".rand(0,100).".".rand(0,100).".".rand(0,100);
+        $u->setUsername($username);
+        //$cookieVal = $username;
+        // remember that the user has logged in (cookies)
+        //setcookie('login', $cookieVal, time()+60*60*24*360); //+1 year 
+        $u->register();
+        $u->login();
+    }
 
     spl_autoload_register(function($class) {
         // Check if the class exists

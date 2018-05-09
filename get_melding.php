@@ -40,14 +40,13 @@
                         <?php $illnesses = User::getUserIllness($m['id']); 
                                 foreach($illnesses as $i):
                         ?>
-                                    <p>- <?php echo $i['name'] ?></p><br>
+                            <p>- <?php echo $i['name'] ?></p><br>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?> 
                 <?php if($m['image']!= NULL):?>
                     <img src="<?php echo $m['image']?>" alt="melding image">
                 <?php endif;?>
-
             </article>
         <?php endforeach; ?>
     <?php endif ?>

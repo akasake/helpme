@@ -1,16 +1,8 @@
 <?php
-    $title = "Welcome";
-
+    include_once("lib/settings/config.php");
+    $title = "Hulp is onderweg.";
     try {
-
-        $u = new User;
-        $username = rand(0,100).".".rand(0,100).".".rand(0,100).".".rand(0,100);
-        $u->setUsername($username);
-        //$cookieVal = $username;
-        // remember that the user has logged in (cookies)
-        //setcookie('login', $cookieVal, time()+60*60*24*360); //+1 year 
-        $u->register();
-        $u->login();
+        
     } 
     catch(Exception $e){
         
@@ -27,8 +19,7 @@
 </head>
 <body>  
         
-    <!-- can add instructions or intro animation-->
-
+    <!-- can add load animation or animation of help being sent-->
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>

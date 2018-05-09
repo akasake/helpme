@@ -1,10 +1,14 @@
 <?php
     include_once("lib/settings/config.php");
     $title = "Helpme";
+    // check with cookie if is firsttime user if yes redirect to first_visit.php 
+    
 
 
     try {
-        
+        if(!isset($_COOKIE['login'])) {
+            header('Location: first_visit.php');
+        }
     } 
     catch(Exception $e){
         

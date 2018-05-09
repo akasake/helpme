@@ -7,7 +7,6 @@
         private $userId;
         private $email;
         private $avatar;
-        private $illnessId;
         private $helperId;
 
         /**
@@ -301,29 +300,7 @@
             //var_dump($result);
             
         }
-        
-
-
-        /**
-         * Get the value of illnessId
-         */ 
-        public function getIllnessId()
-        {
-                return $this->illnessId;
-        }
-
-        /**
-         * Set the value of illnessId
-         *
-         * @return  self
-         */ 
-        public function setIllnessId($illnessId)
-        {
-                $this->illnessId = $illnessId;
-
-                return $this;
-        }
-
+    
         /**
          * Get the value of helperId
          */ 

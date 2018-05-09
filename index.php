@@ -1,5 +1,6 @@
 <?php
     include_once("lib/settings/config.php");
+    $title = "Helpme";
 
 
     try {
@@ -19,8 +20,12 @@
     <title>Muse</title>
 </head>
 <body>
-    <?php include_once("lib/includes/nav.inc.php"); ?>   
-    
+    <?php include_once("lib/includes/nav.inc.php"); ?>  
+        
+    <a href="#">Noodmelding</a>
+    <a href="#">Hulp bieden</a>
+    <a href="#">Help mij</a>
+    <a href="#">Ooggetuigen</a>
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>

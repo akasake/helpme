@@ -1,10 +1,16 @@
 <?php
     include_once("lib/settings/config.php");
     $title = "Welcome";
-    
 
     try {
-        
+        $u = new User;
+        $username = rand(0,100).".".rand(0,100).".".rand(0,100).".".rand(0,100);
+        $u->setUsername($username);
+        $u->register();
+        $u->login();
+        $cookieVal = $username;
+        // remember that the user has logged in (cookies)
+        setcookie('login', $cookieVal, time()+60*60*24*360); //+1 year
     } 
     catch(Exception $e){
         
@@ -22,7 +28,7 @@
 <body>
     <?php include_once("lib/includes/nav.inc.php"); ?>  
         
-    
+    <!-- can add instructions or intro -->
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>

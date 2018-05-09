@@ -344,6 +344,8 @@
                 WHERE user_id = :userId 
             ");  
             $statement->bindValue(":userId", $userId);
+            $statement->execute();
+            return $statement->fetchAll(PDO::FETCH_ASSOC);   
         }
     }
 ?>

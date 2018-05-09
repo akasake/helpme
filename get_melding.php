@@ -1,17 +1,11 @@
 <?php
     include_once("lib/settings/config.php");
     $title = "Alle Meldingen";
+    
 
     try {
-        $u = new User;
-        $username = rand(0,100).".".rand(0,100).".".rand(0,100).".".rand(0,100);
-        $u->setUsername($username);
-        $cookieVal = $username;
-        // remember that the user has logged in (cookies)
-        setcookie('login', $cookieVal, time()+60*60*24*360); //+1 year 
-        $u->register();
-        $u->login();
-        $meldingen = Melding::getMelding();
+        $meldingen = Melding::getMeldingen();
+        
     } 
     catch(Exception $e){
         
@@ -27,8 +21,31 @@
     <title>Muse</title>
 </head>
 <body>  
-        
-    <!-- can add instructions or intro animation-->
+    <?php if(count($meldingen) != 0):?>
+        <?php foreach($meldingen as $m): ?>
+            <article class="melding">     
+                <div class="meldingInfo">
+                    <h3>Location</h3>
+                    <?php // add location ?>
+                    <h3>Melding type: <?php echo $m['type']?></h3>
+                    <h3>Time: <?php echo $m['time']?></h3>
+                    <h3>Melder ID:  <?php echo $m['melder_id']?> </h3>
+                </div>
+                <?php if($m['user_id']!= NULL):?>
+                    <div class="userInfo">
+                        <h3>Persoon in nood: <?php echo $m['firstname']." ".$m['lastname'] ?></h3>
+                        <p>Met de volgende aandoeningen:</p>
+                        <?php $illnesses = User::getUserIllness($m['id']); 
+                                foreach($illnesses as $i):
+                        ?>
+                                    <p>- <?php echo $i['name'] ?></p><br>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif ?>                
+            </article>
+        <?php endforeach; ?>
+    <?php endif ?>
+    
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>

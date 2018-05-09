@@ -333,5 +333,17 @@
 
                 return $this;
         }
+
+        // get user illnesses
+        public static function getUserIllness($userId){
+            $conn = Db::getInstance();
+            $statement = $conn->prepare("
+                SELECT name
+                FROM tl_illness
+                left outer join tl_user_illness on tl_user_illness.illness_id = tl_illness.id
+                WHERE user_id = :userId 
+            ");  
+            $statement->bindValue(":userId", $userId);
+        }
     }
 ?>

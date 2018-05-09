@@ -1,5 +1,6 @@
 <?php
     include_once("lib/settings/config.php");
+    $title = "Melding";
 
 
     try {
@@ -19,7 +20,11 @@
     <title>Muse</title>
 </head>
 <body>
-    <?php include_once("lib/includes/nav.inc.php"); ?>   
+    <?php include_once("lib/includes/nav.inc.php"); ?>  
+    <form action="" method="post">
+    <input type="file" accept="image/*;capture=camera">
+    </form>
+    
     
     
     

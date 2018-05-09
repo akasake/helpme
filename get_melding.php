@@ -4,8 +4,7 @@
     
 
     try {
-        $meldingen = Melding::getMeldingen();
-        
+        $meldingen = Melding::getMeldingen();   
     } 
     catch(Exception $e){
         

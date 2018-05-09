@@ -5,7 +5,6 @@
         private $lastName;
         private $username;
         private $userId;
-        private $email;
         private $avatar;
         private $helperId;
 
@@ -306,8 +305,6 @@
                 INSERT INTO tl_user (first_name, last_name, username)
                 VALUES (:firstName, :lastName, :username)
             ");
-
-           
 
             $statement->bindValue(":firstName", "");
             $statement->bindValue(":lastName", "");

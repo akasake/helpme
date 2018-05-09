@@ -29,7 +29,9 @@
                     <?php // add location ?>
                     <h3>Melding type: <?php echo $m['type']?></h3>
                     <h3>Time: <?php echo $m['time']?></h3>
-                    <h3>Melder ID:  <?php echo $m['melder_id']?> </h3>
+                    <?php if($m['melder_id']!= NULL):?>
+                        <h3>Melder ID:  <?php echo $m['melder_id']?> </h3>
+                    <?php endif; ?>                     
                 </div>
                 <?php if($m['user_id']!= NULL):?>
                     <div class="userInfo">
@@ -41,7 +43,11 @@
                                     <p>- <?php echo $i['name'] ?></p><br>
                         <?php endforeach; ?>
                     </div>
-                <?php endif ?>                
+                <?php endif; ?> 
+                <?php if($m['image']!= NULL):?>
+                    <img src="<?php echo $m['image']?>" alt="melding image">
+                <?php endif;?>
+
             </article>
         <?php endforeach; ?>
     <?php endif ?>

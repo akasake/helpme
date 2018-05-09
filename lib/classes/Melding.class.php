@@ -24,9 +24,10 @@
         public static function getMeldingen(){
             $conn = Db::getInstance();
             $statement = $conn->prepare("
-                Select * from tl_melding 
-                limit 20 
+                Select tl_melding.id, tl_melding.type, tl_melding.longitude, tl_melding.latitude, tl_melding.image, tl_melding.user_id, tl_melding.time, tl_user.firstname, tl_user.lastname from tl_melding
+                left OUTER JOIN tl_user ON tl_user.id = tl_melding.user_id
                 order by tl_melding.time desc
+                limit 20 
             ");
             $statement->execute();
             return $statement->fetchAll(PDO::FETCH_ASSOC);        

@@ -2,13 +2,12 @@
     include_once("lib/settings/config.php");
     $title = "Helpme";
     // check with cookie if is firsttime user if yes redirect to first_visit.php 
-    
-
 
     try {
-        if(!isset($_COOKIE['login'])) {
-            header('Location: first_visit.php');
+        if(!empty($_POST['long']) && !empty($_POST['lat'])) {
+            Melding::makeHelpmeMelding($_POST['lat'],$_POST['long']);
         }
+
     } 
     catch(Exception $e){
         
@@ -28,7 +27,11 @@
         
     <a href="#">Noodmelding</a>
     <a href="#">Hulp bieden</a>
-    <a href="#">Help mij</a>
+    <form action="" method="post">
+        <input type="hidden" class="form__melding__long" name="long">
+        <input type="hidden" class="form__melding__lat" name="lat">
+        <button class="button" type="submit" name="submit">Help Mij</button>
+    </form>
     <a href="#">Ooggetuigen</a>
     
     

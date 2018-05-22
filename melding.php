@@ -17,9 +17,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include("lib/includes/head.inc.php"); ?>
-    <title>Muse</title>
+    <title><?php echo $title ?></title>
 </head>
 <body>
+<div class="canvas">     
     <?php include_once("lib/includes/nav.inc.php"); ?>  
     <form action="" method="post">
     <input type="file" accept="image/*;capture=camera">
@@ -29,5 +30,6 @@
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>
+</div>    
 </body>
 </html> 

@@ -266,6 +266,33 @@ nav
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      background-color: #485059;
+      color: #F3F3F3;
+      padding: 10px 15px;
+      border: 0px;
+      border-radius: 25px;
+  }
+  #tryAgain
+  {
+      text-align: center;
+      background-color: #485059;
+      color: #F3F3F3;
+      padding: 10px 15px;
+      border: 0px;
+      border-radius: 25px;
+  }
+  #save
+  {
+      text-align: center;
+      background-color: #485059;
+      color: #F3F3F3;
+      padding: 10px 15px;
+      border: 0px;
+      border-radius: 25px;
+  }
+  btn_cam
+  {
+      background-color: #485059;
   }
   .hidden{
       display: none;

@@ -20,9 +20,10 @@
     <title><?php echo $title ?></title>
 </head>
 <body>
+<div class="canvas">
     <?php include_once("lib/includes/nav.inc.php"); ?>   
     
-    <form action="" method="post">
+    <form class="setting" action="" method="post">
         <div class="name">
             <label for="name" type="hidden" >name</label>
             <input type="text" id="name" placeholder="name" name="name">
@@ -88,9 +89,13 @@
             <input type="checkbox" id="melding" name="melding">
             <span class="slider round"></span></label>
         </div>
+        <div class="opslaan">
+            <button type="submit" class="btn__opslaan">OPSLAAN</button>
+        </div>
     </form>
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>
+</div>
 </body>
 </html> 

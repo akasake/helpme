@@ -1,6 +1,6 @@
 <?php
     include_once("lib/settings/config.php");
-    $title = "Melding";
+    $title = "MELDING";
 
 
     try {
@@ -17,9 +17,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include("lib/includes/head.inc.php"); ?>
-    <title>Muse</title>
+    <title><?php echo $title ?></title>
 </head>
 <body>
+<div class="canvas">     
     <?php include_once("lib/includes/nav.inc.php"); ?>  
         <video id="video" width="390" height="292" autoplay display="inherit" ></video>
         <button id="snap">Snap Photo</button>
@@ -39,5 +40,6 @@
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>
+</div>    
 </body>
 </html> 

@@ -1,6 +1,6 @@
 <?php
     include_once("lib/settings/config.php");
-    $title = "Hulp is onderweg.";
+    $title = "SUCCES";
     try {
         
     } 
@@ -15,13 +15,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include("lib/includes/head.inc.php"); ?>
-    <title>Muse</title>
+    <title><?php echo $title ?></title>
 </head>
 <body>  
-        
-    <!-- can add load animation or animation of help being sent-->
+<div class="canvas">
+    <?php include_once("lib/includes/nav.inc.php"); ?>       
     
-    
+
     <?php include_once("lib/includes/footer.inc.php"); ?>
+    
+</div>
 </body>
 </html> 

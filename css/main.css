@@ -9,10 +9,15 @@
     box-sizing: border-box; 
     font-family: "andala mono";
 }
+body
+{
+    background-color: #707070;
+}
 a
 {
     text-decoration-line: none;
 }
+/*navigatie*/
 nav
 {
     padding-top: 10px;
@@ -59,6 +64,7 @@ nav
    justify-self: center;
    font-size: 1.2em;
 }
+/*index en ooggetuigen*/
 .buttons
 {
     display: grid; 
@@ -69,6 +75,7 @@ nav
     grid-row-gap: 25px;
     margin-top: 15px; 
 }
+/*index*/
 .buttons__main__helpmij
 {
     background-color: #FF0000;
@@ -139,6 +146,7 @@ nav
     padding-top: 10px;
     width: 80%;
 }
+/*ooggetuigen*/
 .buttons__main__instructies
 {
     background-color: #F3F3F3;
@@ -189,6 +197,11 @@ nav
 {
     padding-top: 10px;
     width: 60%;
+}
+/*settings*/
+.setting
+{
+    text-align: center;
 }
 .switch {
     position: relative;
@@ -247,8 +260,48 @@ nav
   .slider.round:before {
     border-radius: 50%;
   }
-
-
+  /*camera*/
+  #snap
+  {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background-color: #485059;
+      color: #F3F3F3;
+      padding: 10px 15px;
+      border: 0px;
+      border-radius: 25px;
+  }
+  #tryAgain
+  {
+      text-align: center;
+      background-color: #485059;
+      color: #F3F3F3;
+      padding: 10px 15px;
+      border: 0px;
+      border-radius: 25px;
+  }
+  #save
+  {
+      text-align: center;
+      background-color: #485059;
+      color: #F3F3F3;
+      padding: 10px 15px;
+      border: 0px;
+      border-radius: 25px;
+  }
+  btn_cam
+  {
+      background-color: #485059;
+  }
   .hidden{
       display: none;
+  }
+
+  .canvas{
+    width: 375px;
+    height: 667px;
+    margin: auto;
+    text-align: center;
+    background-color: #fff;
   }

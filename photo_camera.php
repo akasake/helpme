@@ -1,6 +1,6 @@
 <?php
     include_once("lib/settings/config.php");
-    $title = "Photo Camera";
+    $title = "CAMERA";
 
     try {
         
@@ -19,14 +19,16 @@
     <title><?php echo $title?></title>
 </head>
 <body>
+<div class="canvas">    
     <?php include_once("lib/includes/nav.inc.php"); ?>   
-    <video id="video" width="390" height="292" autoplay display="inherit" ></video>
+    <video id="video" width="375" height="480" autoplay display="inherit" ></video>
     <button id="snap">Snap Photo</button>
-    <canvas id="canvas" class="hidden" width="390" height="292" ></canvas>
+    <canvas id="canvas" class="hidden" width="375" height="480" ></canvas>
     <button id="tryAgain" class="hidden">Try again</button>
     <button id="save" class="hidden">Save</button>
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>
+</div>    
 </body>
 </html> 

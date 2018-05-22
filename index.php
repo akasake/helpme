@@ -23,6 +23,7 @@
     <title><?php echo $title ?></title>
 </head>
 <body>
+<div class="canvas">    
     <?php include_once("lib/includes/nav.inc.php"); ?>  
     
     <div class="buttons">
@@ -37,5 +38,6 @@
     </div>
     
     <?php include_once("lib/includes/footer.inc.php"); ?>
+</div>    
 </body>
 </html> 

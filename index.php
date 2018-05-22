@@ -33,7 +33,7 @@
             <input type="hidden" class="form__melding__lat" name="lat">
             <button class="button buttons__main__melden" type="submit" name="submit">MELD ONGEVAL <img src="images/meldOngeval.svg" alt="ongeval melden"> </button>
         </form>
-        <a class="buttons__main__ooggetuigen" href="firstaid.php">OOGGETUIGEN <img src="images/ooggetuigen.svg" alt="ooggetuigen"></a>
+        <a class="buttons__main__ooggetuigen" href="ooggetuigen.php">OOGGETUIGEN <img src="images/ooggetuigen.svg" alt="ooggetuigen"></a>
     </div>
     
     <?php include_once("lib/includes/footer.inc.php"); ?>

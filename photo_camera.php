@@ -1,6 +1,6 @@
 <?php
     include_once("lib/settings/config.php");
-    $title = "Photo Camera";
+    $title = "CAMERA";
 
     try {
         

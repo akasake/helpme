@@ -22,7 +22,7 @@
 <body>
     <?php include_once("lib/includes/nav.inc.php"); ?>   
     
-    <form action="" method="post">
+    <form class="setting" action="" method="post">
         <div class="name">
             <label for="name" type="hidden" >name</label>
             <input type="text" id="name" placeholder="name" name="name">
@@ -87,6 +87,9 @@
             <label class="switch">
             <input type="checkbox" id="melding" name="melding">
             <span class="slider round"></span></label>
+        </div>
+        <div class="opslaan">
+            <button type="submit" class="btn__opslaan">OPSLAAN</button>
         </div>
     </form>
     

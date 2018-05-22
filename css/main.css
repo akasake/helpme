@@ -190,6 +190,10 @@ nav
     padding-top: 10px;
     width: 60%;
 }
+.setting
+{
+    text-align: center;
+}
 .switch {
     position: relative;
     display: inline-block;

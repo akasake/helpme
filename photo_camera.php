@@ -22,7 +22,9 @@
     <?php include_once("lib/includes/nav.inc.php"); ?>   
     <video id="video" width="390" height="480" autoplay display="inherit" ></video>
     <button id="snap">Snap Photo</button>
-    <canvas id="canvas" width="390" height="480" display="hidden"></canvas>
+    <canvas id="canvas" class="hidden" width="390" height="480" ></canvas>
+    <button id="tryAgain" class="hidden">Try again</button>
+    <button id="save" class="hidden">Save</button>
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>

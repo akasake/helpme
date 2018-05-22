@@ -173,16 +173,48 @@ var video = document.getElementById('video');
 
 if (video){
 
-    // Get access to the camera!
-if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    // Not adding `{ audio: true }` since we only want video now
-    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-        video.src = window.URL.createObjectURL(stream);
-        video.play();
+        // Get access to the camera!
+    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        // Not adding `{ audio: true }` since we only want video now
+        navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+            video.src = window.URL.createObjectURL(stream);
+            video.play();
+        });
+    }
+
+    // Elements for taking the snapshot
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    var video = document.getElementById('video');
+
+    // Trigger photo take
+    document.getElementById("snap").addEventListener("click", function() {
+        document.getElementById("video").classList.add("hidden");
+        document.getElementById("snap").classList.add("hidden");
+        document.getElementById("canvas").classList.remove("hidden");
+        document.getElementById("tryAgain").classList.remove("hidden");
+        document.getElementById("save").classList.remove("hidden");
+        context.drawImage(video, 0, 0, 390, 292);
     });
+
+    document.getElementById("tryAgain").addEventListener("click", function() {
+        document.getElementById("video").classList.remove("hidden");
+        document.getElementById("snap").classList.remove("hidden");
+        document.getElementById("canvas").classList.add("hidden");
+        document.getElementById("tryAgain").classList.add("hidden");
+        document.getElementById("save").classList.add("hidden");
+        context.drawImage(video, 0, 0, 390, 292);
+    });
+
+    document.getElementById("save").addEventListener("click", function() {
+        var image = new Image();
+	    image.src = canvas.toDataURL("image/png");
+	    return image;
+    });
+    
 }
 
-}
+
 
 
 /* Legacy code below: getUserMedia 

@@ -196,3 +196,13 @@ nav
   .slider.round:before {
     border-radius: 50%;
   }
+
+
+  .hidden{
+      display: none;
+  }
+
+  #canvas{
+    width: 390px;
+    height: 480px
+  }

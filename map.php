@@ -13,7 +13,7 @@
     <title>Muse</title>
     <style>
       #map{
-        height: 400px;
+        height: 600px;
         width: 100%;
        }
     </style>
@@ -23,6 +23,7 @@
     <div id="map"></div>
 
     <?php include_once("lib/includes/footer.inc.php"); ?>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP6tWYDigepitMGesI3xXYxg2mnvVDPAs&callback=loadMaps" async defer></script>
 </body>
 
 </html> 

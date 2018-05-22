@@ -20,7 +20,9 @@
 </head>
 <body>
     <?php include_once("lib/includes/nav.inc.php"); ?>   
-    
+    <video id="video" width="390" height="480" autoplay display="inherit" ></video>
+    <button id="snap">Snap Photo</button>
+    <canvas id="canvas" width="390" height="480" display="hidden"></canvas>
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>

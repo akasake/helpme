@@ -25,7 +25,7 @@
         <?php foreach($meldingen as $m): ?>
             <article class="melding">     
                 <div class="meldingInfo">
-                    <h3>Location</h3>
+                    <h3><span class="red">Location</span></h3>
                     <?php // add location ?>
                     <h3>Melding type: <?php echo $m['type']?></h3>
                     <h3>Time: <?php echo $m['time']?></h3>

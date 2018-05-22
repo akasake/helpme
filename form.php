@@ -25,11 +25,11 @@
     
     <form class="setting" action="" method="post">
         <div class="name">
-            <label for="name" type="hidden" >name</label>
+            <label class="hidden" for="name" type="hidden" >name</label>
             <input type="text" id="name" placeholder="name" name="name">
         </div>
         <div class="geboortedatum">
-            <label for="geboortedatum" type="hidden" >geboortedatum</label>
+            <label class="hidden" for="geboortedatum" type="hidden" >geboortedatum</label>
             <input type="date" id="geboortedatum" placeholder="geboortedatum" name="geboortedatum">
         </div>
         <div class="huis">
@@ -53,7 +53,7 @@
             </select>
         </div>
         <div class="gewicht">
-            <label for="gewicht" type="hidden" >gewicht</label>
+            <label class="hidden" for="gewicht" type="hidden" >gewicht</label>
             <input type="number" id="gewicht" placeholder="gewicht" name="gewicht">
         </div>
         <div class="bloedgroep">
@@ -76,11 +76,11 @@
             <span class="slider round"></span></label>
         </div>
         <div class="riziv">
-            <label for="riziv" type="hidden" >riziv</label>
+            <label class="hidden" for="riziv" type="hidden" >riziv</label>
             <input type="number" id="riziv" placeholder="riziv" name="riziv">
         </div>
         <div class="job">
-            <label for="job" type="hidden" >job</label>
+            <label class="hidden" for="job" type="hidden" >job</label>
             <input type="text" id="job" placeholder="job" name="job ">
         </div>
         <div class="melding">

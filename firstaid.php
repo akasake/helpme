@@ -3,6 +3,13 @@
     $title = "INSTRUCTIES";
 
     try {
+        $video = ehbo::standardTreatment();
+        if(!empty($_GET['illness'])){
+            $videos = ehbo::getTreatment($_GET['illness']);
+        }
+        /*else if( ebho::userInRange($long, $lat)){
+            $video = ehbo::getTreatment(ehbo::getIllnessIdFromMelding());
+        }*/
         
     } 
     catch(Exception $e){
@@ -20,10 +27,14 @@
 </head>
 <body>
     <div class="canvas"> 
-        <?php include_once("lib/includes/nav.inc.php"); ?>   
-        <iframe width="390" height="220" src="https://www.youtube.com/embed/ea1RJUOiNfQ?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <iframe width="390" height="220" src="https://www.youtube.com/embed/BQNNOh8c8ks?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <iframe width="390" height="220" src="https://www.youtube.com/embed/NxO5LvgqZe0?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>   
+        <?php include_once("lib/includes/nav.inc.php"); 
+        if(isset($videos)): ?>
+            <?php foreach($videos as $v): ?>
+            <iframe width="390" height="220" src="<?php echo $v->video?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <?php endforeach; ?> 
+        <?php else: ?>  
+            <iframe width="390" height="220" src="<?php echo $video->video?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <?php endif; ?>
         <?php include_once("lib/includes/footer.inc.php"); ?>
     </div>
 </body>

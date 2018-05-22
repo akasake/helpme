@@ -1,6 +1,6 @@
 <?php
     include_once("lib/settings/config.php");
-    $title = "Helpme";
+    $title = "HELPME";
     // check with cookie if is firsttime user if yes redirect to first_visit.php 
 
     try {
@@ -20,20 +20,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include("lib/includes/head.inc.php"); ?>
-    <title>Muse</title>
+    <title><?php echo $title ?></title>
 </head>
 <body>
     <?php include_once("lib/includes/nav.inc.php"); ?>  
-        
-    <a href="#">Noodmelding</a>
-    <a href="#">Hulp bieden</a>
-    <form action="" method="post">
-        <input type="hidden" class="form__melding__long" name="long">
-        <input type="hidden" class="form__melding__lat" name="lat">
-        <button class="button" type="submit" name="submit">Help Mij</button>
-    </form>
-    <a href="#">Ooggetuigen</a>
     
+    <div class="buttons">
+        <a class="buttons__main__helpmij" href="#">HELP MIJ <img src="images/helpmij.svg" alt="helpmij"></a>
+        <a class="buttons__main__hulpbieden" href="#">HULP BIEDEN <img src="images/hulpBieden.svg" alt="hulpbieden"></a>
+        <form  class="form__main__melden" action="" method="post">
+            <input type="hidden" class="form__melding__long" name="long">
+            <input type="hidden" class="form__melding__lat" name="lat">
+            <button class="button buttons__main__melden" type="submit" name="submit">MELD ONGEVAL <img src="images/meldOngeval.svg" alt="ongeval melden"> </button>
+        </form>
+        <a class="buttons__main__ooggetuigen" href="firstaid.php">OOGGETUIGEN <img src="images/ooggetuigen.svg" alt="ooggetuigen"></a>
+    </div>
     
     <?php include_once("lib/includes/footer.inc.php"); ?>
 </body>

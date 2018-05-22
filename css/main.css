@@ -1,2 +1,135 @@
-* { box-sizing: border-box; }
-
+@font-face {
+    font-family: 'andala mono';
+    src: url('../lib/font/Andale-Mono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* 
+{ 
+    box-sizing: border-box; 
+    font-family: "andala mono";
+}
+a
+{
+    text-decoration-line: none;
+}
+nav
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    background-color: #C4C4C4;
+    justify-content: center;
+}
+.logo
+{
+   cursor: pointer;
+   grid-area: 1/2;
+   align-self: center;
+   justify-self: center;
+}
+.logo img
+{
+    width: 90px;
+}
+.back{
+    grid-area: 0/1;
+    width: 20px;
+    align-self: center;
+    justify-self: center;
+}
+.settings
+{
+    grid-area: 1/3;
+    width: 30px;
+    align-self: center;
+    justify-self: center;
+}
+.pageTitle
+{
+   grid-area: 1/2;
+   align-self: center;
+   justify-self: center;
+   font-size: 1.2em;
+}
+.buttons
+{
+    display: grid; 
+    grid-template-columns: 60%;
+    grid-template-row: 20% 20% 20% 20%;
+    justify-content: center;
+    align-content: center;
+    grid-row-gap: 25px;
+    margin-top: 15px; 
+}
+.buttons__main__helpmij
+{
+    background-color: #FF0000;
+    text-align: center;
+    padding: 10px 40px;
+    border-radius: 25px;
+    color: #FFF;
+    align-self: center;
+}
+.buttons__main__helpmij img
+{
+    padding-top: 10px;
+    width: 80%;
+}    
+.buttons__main__hulpbieden
+{
+    background-color: #F3F3F3;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: #FF0000;
+    width: 90%;
+    justify-self: center;
+    height: 117px;
+    align-self: center;
+}
+.buttons__main__hulpbieden img
+{
+    padding-top: 10px;
+    width: 30%;
+} 
+.form__main__melden
+{
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+.buttons__main__melden
+{
+    background-color: #F3F3F3;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: #FF0000;
+    width: 90%;
+    height: 117px;
+    border: 0px;
+}
+.buttons__main__melden img
+{
+    padding-top: 10px;
+    width: 30%;
+}     
+.buttons__main__ooggetuigen
+{
+    background-color: #F3F3F3;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: #FF0000;
+    width: 90%;
+    height: 117px;
+    justify-self: center;
+    align-self: center;
+}
+.buttons__main__ooggetuigen img
+{
+    padding-top: 10px;
+    width: 80%;
+} 

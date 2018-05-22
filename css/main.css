@@ -252,8 +252,3 @@ nav
   .hidden{
       display: none;
   }
-
-  #canvas{
-    width: 390px;
-    height: 480px
-  }

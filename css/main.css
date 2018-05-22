@@ -138,7 +138,58 @@ nav
 {
     padding-top: 10px;
     width: 80%;
-} 
+}
+.buttons__main__instructies
+{
+    background-color: #F3F3F3;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: #FF0000;
+    width: 90%;
+    height: 117px;
+    justify-self: center;
+    align-self: center;
+}
+.buttons__main__instructies img
+{
+    padding-top: 10px;
+    width: 50%;
+}  
+.buttons__main__voicechat
+{
+    background-color: #F3F3F3;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: #FF0000;
+    width: 90%;
+    height: 117px;
+    justify-self: center;
+    align-self: center;
+}
+.buttons__main__voicechat img
+{
+    padding-top: 10px;
+    width: 30%;
+}  
+.buttons__main__videochat
+{
+    background-color: #F3F3F3;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: #FF0000;
+    width: 90%;
+    height: 117px;
+    justify-self: center;
+    align-self: center;
+}
+.buttons__main__videochat img
+{
+    padding-top: 10px;
+    width: 60%;
+}
 .switch {
     position: relative;
     display: inline-block;

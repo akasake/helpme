@@ -29,7 +29,7 @@
     <div class="buttons">
         <a class="buttons__main__helpmij" href="#">HELP MIJ <img src="images/helpmij.svg" alt="helpmij"></a>
         <a href="map.php" class="buttons__main__hulpbieden" href="#">HULP BIEDEN <img src="images/hulpBieden.svg" alt="hulpbieden"></a>
-        <form  class="form__main__melden" action="" method="post">
+        <form  class="form__main__melden" action="melding.php" method="post">
             <input type="hidden" class="form__melding__long" name="long">
             <input type="hidden" class="form__melding__lat" name="lat">
             <button class="button buttons__main__melden" type="submit" name="submit">MELD ONGEVAL <img src="images/meldOngeval.svg" alt="ongeval melden"> </button>

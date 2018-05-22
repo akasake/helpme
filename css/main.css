@@ -290,6 +290,29 @@ nav
       border: 0px;
       border-radius: 25px;
   }
+  .description
+  {
+      margin: 15px 15px;
+  }
+  .description label
+  {
+      display: none;
+  }
+  .description textarea
+  {
+      background-color: #F3F3F3;
+      border: none;
+      border-radius: 25px;
+  }
+  #send
+  {
+      text-align: center;
+      background-color: #485059;
+      color: #F3F3F3;
+      padding: 10px 15px;
+      border: 0px;
+      border-radius: 25px;
+  }
   btn_cam
   {
       background-color: #485059;

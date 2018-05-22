@@ -22,18 +22,20 @@
 <body>
 <div class="canvas">     
     <?php include_once("lib/includes/nav.inc.php"); ?>  
-        <video id="video" width="390" height="292" autoplay display="inherit" ></video>
+        <video id="video" width="375" height="292" autoplay display="inherit" ></video>
         <button id="snap">Snap Photo</button>
-        <canvas id="canvas" class="hidden" width="390" height="292" ></canvas>
+        <canvas id="canvas" class="hidden" width="375" height="292" ></canvas>
         <button id="tryAgain" class="hidden">Try again</button>
         <button id="save" class="hidden">Save</button>     
     <form action="" method="post">   
         <input type="hidden" name="photo" class="photo" id="photo" value="">
-        <label for="description" class="">Description</label>
-        <textarea class="" name="description" id="description" placeholder="Describe here"></textarea>
+        <div class="description">
+            <label for="description" class="">Description</label>
+            <textarea cols="30" rows="5" class="" name="description" id="description" placeholder=" Describe here"></textarea>
+        </div>
         <input type="hidden" class="form__melding__long" name="long">
         <input type="hidden" class="form__melding__lat" name="lat">
-        <button type="submit">send</button>
+        <button id="send" type="submit">send</button>
     </form>
     
     

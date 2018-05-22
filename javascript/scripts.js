@@ -206,10 +206,12 @@ if (video){
         context.drawImage(video, 0, 0, 390, 292);
     });
 
-    document.getElementById("save").addEventListener("click", function() {
+    document.getElementById("save").addEventListener("click", function(e) {
         var image = new Image();
-	    image.src = canvas.toDataURL("image/png");
-	    return image;
+        image.src = canvas.toDataURL("image/png");
+        console.log(image.src);
+        document.getElementById("photo").attr('value') = image.src
+        e.preventDefault();
     });
     
 }

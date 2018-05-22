@@ -13,9 +13,9 @@
         public static function getInstance() {
 
             if($_SERVER['HTTP_HOST'] == "localhost") {
-                include_once($_SERVER['DOCUMENT_ROOT'] ."/muse/lib/settings/db.php");
+                include_once($_SERVER['DOCUMENT_ROOT'] ."/lib/settings/db.php");
             }else{
-                include_once($_SERVER['DOCUMENT_ROOT'] ."/muse/lib/settings/db.prod.php");
+                include_once($_SERVER['DOCUMENT_ROOT'] ."/lib/settings/db.prod.php");
             }
             
             if(self::$conn == null) {

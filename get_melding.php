@@ -1,6 +1,6 @@
 <?php
     include_once("lib/settings/config.php");
-    $title = "Alle Meldingen";
+    $title = "ALLE MELDINGEN";
     
 
     try {
@@ -20,6 +20,7 @@
     <title><?php echo $title ?></title>
 </head>
 <body>  
+<div class="canvas">
     <?php if(count($meldingen) != 0):?>
         <?php foreach($meldingen as $m): ?>
             <article class="melding">     
@@ -53,5 +54,6 @@
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>
+</div>    
 </body>
 </html> 

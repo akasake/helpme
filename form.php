@@ -20,6 +20,7 @@
     <title><?php echo $title ?></title>
 </head>
 <body>
+<div class="canvas">
     <?php include_once("lib/includes/nav.inc.php"); ?>   
     
     <form class="setting" action="" method="post">
@@ -95,5 +96,6 @@
     
     
     <?php include_once("lib/includes/footer.inc.php"); ?>
+</div>
 </body>
 </html> 

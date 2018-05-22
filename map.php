@@ -19,11 +19,13 @@
     </style>
 </head>
 <body>
+<div class="canvas">
     <?php include_once("lib/includes/nav.inc.php"); ?>       
     <div id="map"></div>
 
     <?php include_once("lib/includes/footer.inc.php"); ?>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP6tWYDigepitMGesI3xXYxg2mnvVDPAs&callback=loadMaps" async defer></script>
+</div>
 </body>
 
 </html> 

@@ -42,4 +42,127 @@ if (($(".form_melding_long").length > 0 && $(".form_melding_lat").length > 0 )) 
     getLocation()
 }
 
+//Define map style for all Google Maps
+
+var mapStyle = [
+    {
+      "featureType": "administrative",
+      "elementType": "geometry",
+      "stylers": [{ "visibility": "off" }],
+    },
+    {
+      "featureType": "poi",
+      "stylers": [{ "visibility": "off" }],
+    },
+    {
+      "featureType": "road",
+      "elementType": "labels.icon",
+      "stylers": [{ "visibility": "off" }],
+    },
+    {
+      "featureType": "transit",
+      "stylers": [{ "visibility": "off" }],
+    },
+  ]
+
+/**
+ * Google documentation
+ * https://developers.google.com/maps/documentation/javascript/adding-a-google-map
+ */
+function loadMaps() {
+    var uluru = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+    infoWindow = new google.maps.InfoWindow;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+         var marker = new google.maps.Marker({
+            position: pos,
+            map: map
+        });
+        map.setCenter(pos);
+      }, function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  }
+
+/**
+ * Tutorial from MDN
+ * https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
+ */
 // Here we will call for ajaxcall
+
+
+/**
+ * Functions
+ * */
+
+function imagePreview(location, type) {
+
+    // source: https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
+
+    // Check if an actual file has been uploaded
+    if (inputField.files && inputField.files[0]) {
+
+        // create a new FileReader object
+        let reader = new FileReader();
+
+        // When the file reader is ready
+        reader.onload = (e) => {
+
+            // Select where the image has to be previewed
+            let l = document.querySelector(location)
+            // Update the location with the selected image
+            if (type == "photo") {
+
+                // Create container div
+                let div = document.createElement("div")
+
+                div.setAttribute("class", "form__item__photo animated fadeIn")
+
+                // If filter is selected, add to preview
+                let filter = document.querySelector(".filter__select");
+                let filterClass = filter.options[filter.selectedIndex].getAttribute("data-filter");
+
+                let figure = document.createElement("figure");
+                figure.setAttribute("class", filterClass);
+
+                // Add the image to the div
+                div.setAttribute("style", `background-image: url('${e.target.result}')`)
+
+                //Add the div to the figure
+                figure.appendChild(div)
+
+                // clear content and add image
+                l.innerHTML = ""
+                l.appendChild(figure)
+
+            } else {
+
+                // Replace source with selected file
+                l.setAttribute('src', e.target.result)
+
+            }
+
+
+        }
+
+        // Native JS method to read the input data as an URL
+        reader.readAsDataURL(inputField.files[0]);
+    }
+}

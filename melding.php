@@ -31,7 +31,7 @@
         <input type="hidden" name="photo" class="photo" id="photo" value="">
         <div class="description">
             <label for="description" class="">Description</label>
-            <textarea cols="30" rows="5" class="" name="description" id="description" placeholder=" Describe here"></textarea>
+            <textarea cols="30" rows="5" class="" name="description" id="description" placeholder="Describe here"></textarea>
         </div>
         <input type="hidden" class="form__melding__long" name="long">
         <input type="hidden" class="form__melding__lat" name="lat">

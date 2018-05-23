@@ -1,6 +1,8 @@
 <?php
     include_once("lib/settings/config.php");
-    $title = "HULP BIEDEN"
+    $title = "HULP BIEDEN";
+    $meldingen=Melding::getCloseMeldingen(4.4737954, 51.0208132);
+    var_dump($meldingen)
 
 
 ?><!DOCTYPE html>

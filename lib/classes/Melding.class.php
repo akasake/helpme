@@ -37,11 +37,11 @@
         public static function getCloseMeldingen($long, $lat){
             $melding = Melding::getMeldingen();   
             $mInRange = [];
-            $maxDistance = 2;
+            $maxDistance = 5;
             foreach($melding as $m){
              
                 if(Melding::calculateWithinDistance($long, $lat, $m['longitude'], $m['latitude'], $maxDistance)){
-                    array_push($mInRange, $p);
+                    array_push($mInRange, $m);
                 }
             }
    

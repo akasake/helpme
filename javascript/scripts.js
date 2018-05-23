@@ -92,13 +92,54 @@ function loadMaps() {
             map: map
         });
         map.setCenter(pos);
+
+        var long = position.coords.longitude
+        console.log(long);
+        var lat = position.coords.latitude
+      console.log(lat);
+      $.ajax({
+        method: "POST",
+        url: "lib/ajax/markers.php",
+        data: {long: long, lat: lat},
+        })
+        .done(function (res) {
+            if (res.status == "success") {
+                console.log("hello");
+                
+                let markers = res.markers;
+                let infowindow = new google.maps.InfoWindow
+
+                for (let i = 0; i < markers.length; i++) {
+                    let position = new google.maps.LatLng(markers[i]['latitude'], markers[i]['longitude']);
+                    let content = 
+                    `<div id="mapInfo">
+                       help needed here.
+                    </div>`;
+
+                    let marker = new google.maps.Marker({
+                        position: position,
+                        map: map,
+                        title: "helpme",
+                    });
+
+                    marker.addListener('click', function () {
+                        infowindow.setContent(content);
+                        infowindow.open(map, marker);
+                    });
+                }
+            }
+        });
+
       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
       });
+
+      
     } else {
       // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
     }
+    
   }
 
 /**

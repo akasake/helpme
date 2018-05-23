@@ -63,7 +63,7 @@
         public static function getCloseMeldingen($long, $lat){
             $melding = Melding::getMeldingen();   
             $mInRange = [];
-            $maxDistance = 5;
+            $maxDistance = 2;
             foreach($melding as $m){
              
                 if(Melding::calculateWithinDistance($long, $lat, $m['longitude'], $m['latitude'], $maxDistance)){

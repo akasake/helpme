@@ -18,7 +18,25 @@
             $statement->bindValue(":long", $long ?? null);
             $statement->bindValue(":lat", $lat ?? null);
             // time is filled automatically in database
+            header("location: done.php");
 			$statement->execute();
+
+        }
+        public static function makeMelding($long, $lat){
+            $conn = Db::getInstance();
+            $statement = $conn->prepare("
+                INSERT INTO tl_melding
+                (user_id, longitude, latitude)
+                VALUES (:userId, :long, :lat)
+            ");
+            $statement->bindValue(":userId", $_SESSION['id']);
+            // Checks if the values are set, else return null
+            $statement->bindValue(":long", $long ?? null);
+            $statement->bindValue(":lat", $lat ?? null);
+            // time is filled automatically in database
+            $statement->execute();
+            header("location: done.php");
+            
 
         }
         public static function getMeldingen(){

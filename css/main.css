@@ -368,6 +368,22 @@ nav
     {
     color: #FF0000;
     }
+.img_done
+    {
+        width: 80%;
+        margin-top: 5px;
+        margin-bottom: 75px;
+    }
+.btn_done 
+{
+    text-align: center;
+      background-color: #485059;
+      color: #F3F3F3;
+      padding: 10px 15px;
+      border: 0px;
+      border-radius: 25px;
+      margin-top: 25px;
+}   
   .canvas{
     width: 375px;
     margin: auto;

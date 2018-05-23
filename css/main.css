@@ -238,6 +238,12 @@ nav
       padding: 10px 15px;
       border: 0px;
       border-radius: 25px;
+      margin-top: 25px;
+  }
+  .lbl_switch
+  {
+    display: grid;
+
   }
 .switch {
     position: relative;

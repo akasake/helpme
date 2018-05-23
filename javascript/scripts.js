@@ -250,6 +250,33 @@ if (video){
     
 }
 
+function risk() {
+    // Get the checkbox
+    var checkBox = document.getElementById("risicogroep");
+    // Get the output text
+    var text = document.getElementById("ifrisico");
+  
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true){
+      text.classList.remove("hidden");
+    } else {
+        text.classList.add("hidden");
+    }
+  }
+  function zorg() {
+    // Get the checkbox
+    var checkBox = document.getElementById("arts");
+    // Get the output text
+    var text = document.getElementById("ifarts");
+  
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true){
+      text.classList.remove("hidden");
+    } else {
+        text.classList.add("hidden");
+    }
+  }  
+
 
 
 

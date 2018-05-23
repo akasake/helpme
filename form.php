@@ -41,9 +41,10 @@
         <div class="risicogroep">
             <label for="risicogroep">hebt u een aandoening</label>
             <label class="switch">
-            <input type="checkbox" id="risicogroep" name="risicogroep">
+            <input type="checkbox" id="risicogroep" name="risicogroep" onclick="risk()">
             <span class="slider round"></span></label>
         </div>
+        <div id="ifrisico" class="hidden">
         <div class="aandoening">
             <select name="aandoening">
                 <option value="aandoening">aandoening</option>
@@ -52,6 +53,7 @@
                 <option value="epilepsie">epilepsie</option>
             </select>
         </div>
+        
         <div class="gewicht">
             <label class="hidden" for="gewicht" type="hidden" >gewicht</label>
             <input type="number" id="gewicht" placeholder="gewicht" name="gewicht">
@@ -69,25 +71,28 @@
                 <option value="O-">O-</option>
             </select>
         </div>
+        </div>
         <div class="arts">
             <label for="arts">bent u hulpverlener</label>
             <label class="switch">
-            <input type="checkbox" id="arts" name="arts">
+            <input type="checkbox" id="arts" name="arts" onclick="zorg()">
             <span class="slider round"></span></label>
         </div>
-        <div class="riziv">
-            <label class="hidden" for="riziv" type="hidden" >riziv</label>
-            <input type="number" id="riziv" placeholder="riziv" name="riziv">
-        </div>
-        <div class="job">
-            <label class="hidden" for="job" type="hidden" >job</label>
-            <input type="text" id="job" placeholder="job" name="job ">
-        </div>
-        <div class="melding">
-            <label for="melding">wil meldingen ontvangen</label>
-            <label class="switch">
-            <input type="checkbox" id="melding" name="melding">
-            <span class="slider round"></span></label>
+        <div id="ifarts" class="hidden">
+            <div class="riziv">
+                <label class="hidden" for="riziv" type="hidden" >riziv</label>
+                <input type="number" id="riziv" placeholder="riziv" name="riziv">
+            </div>
+            <div class="job">
+                <label class="hidden" for="job" type="hidden" >job</label>
+                <input type="text" id="job" placeholder="job" name="job ">
+            </div>
+            <div class="melding">
+                <label class="lbl_switch" for="melding">wil meldingen ontvangen</label>
+                <label class="switch">
+                <input type="checkbox" id="melding" name="melding">
+                <span class="slider round"></span></label>
+            </div>
         </div>
         <div class="opslaan">
             <button type="submit" class="btn__opslaan">OPSLAAN</button>

@@ -19,7 +19,7 @@
             $statement->bindValue(":long", $long ?? null);
             $statement->bindValue(":lat", $lat ?? null);
             // time is filled automatically in database
-            $statement->execute();
+            
             if($statement->execute()){
                 header("location: done.php");
             }
@@ -39,7 +39,7 @@
             $statement->bindValue(":image", $img ?? null);
             $statement->bindValue(":des", $des ?? null);
             // time is filled automatically in database
-            $statement->execute();
+            
             if($statement->execute()){
                 header("location: done.php");
             }

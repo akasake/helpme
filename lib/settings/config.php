@@ -18,10 +18,6 @@
     });
 
     try{
-       if(!empty($_POST['search'])){
-            $description= $_POST['search'];
-            $searchedPosts = Post::searchRedirect($description);
-       } 
        // registers user
     if(!isset($_SESSION['id'])) {
         $u = new User;

@@ -33,7 +33,7 @@
         </form>
         <a href="map.php" class="buttons__main__hulpbieden" href="#">HULP BIEDEN <img src="images/hulpBieden.svg" alt="hulpbieden"></a>
         <a class="buttons__main__melden" href="melding.php">MELD ONGEVAL <img src="images/meldOngeval.svg" alt="ongeval melden"></a>
-        <a class="buttons__main__ooggetuigen" href="firstaid.php">OOGGETUIGEN <img src="images/ooggetuigen.svg" alt="ooggetuigen"></a>
+        <a class="buttons__main__ooggetuigen" href="ooggetuigen.php">OOGGETUIGEN <img src="images/ooggetuigen.svg" alt="ooggetuigen"></a>
     </div>
     
     <?php include_once("lib/includes/footer.inc.php"); ?>

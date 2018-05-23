@@ -35,6 +35,7 @@
         </div>
         <input type="hidden" class="form__melding__long" name="long">
         <input type="hidden" class="form__melding__lat" name="lat">
+        <input type="hidden" name="melder" class="melder" value="<?php echo $_SESSION['id'] ?>">        
         <button id="send" type="submit">send</button>
     </form>
     

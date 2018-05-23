@@ -26,13 +26,13 @@
     <?php include_once("lib/includes/nav.inc.php"); ?>  
     
     <div class="buttons">
-        <form  class="form__main__melden" action="" method="post">
+        <form  class="form__main__helpmij" action="" method="post">
             <input type="hidden" class="form__melding__long" name="long">
             <input type="hidden" class="form__melding__lat" name="lat">
-            <button class="button buttons__main__melden" type="submit" name="submit">HELP MIJ<img src="images/helpmij.svg" alt="helpmij"></button>
+            <button class="buttons__main__helpmij button" type="submit" name="submit">HELP MIJ<img src="images/helpmij.svg" alt="helpmij"></button>
         </form>
         <a href="map.php" class="buttons__main__hulpbieden" href="#">HULP BIEDEN <img src="images/hulpBieden.svg" alt="hulpbieden"></a>
-        <a class="buttons__main__helpmij" href="melding.php">MELD ONGEVAL <img src="images/meldOngeval.svg" alt="ongeval melden"></a>
+        <a class="buttons__main__melden" href="melding.php">MELD ONGEVAL <img src="images/meldOngeval.svg" alt="ongeval melden"></a>
         <a class="buttons__main__ooggetuigen" href="firstaid.php">OOGGETUIGEN <img src="images/ooggetuigen.svg" alt="ooggetuigen"></a>
     </div>
     

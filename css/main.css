@@ -84,6 +84,10 @@ nav
     border-radius: 25px;
     color: #FFF;
     align-self: center;
+    border: 0px;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
 }
 .buttons__main__helpmij img
 {
@@ -107,7 +111,7 @@ nav
     padding-top: 10px;
     width: 30%;
 } 
-.form__main__melden
+.form__main__helpmij
 {
     justify-self: center;
     align-self: center;
@@ -123,6 +127,9 @@ nav
     width: 90%;
     height: 117px;
     border: 0px;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
 }
 .buttons__main__melden img
 {

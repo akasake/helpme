@@ -11,7 +11,7 @@
 }
 body
 {
-    
+    box-sizing: border-box;
 }
 a
 {
@@ -69,7 +69,7 @@ nav
 {
     display: grid; 
     grid-template-columns: 60%;
-    grid-template-row: 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20%;
     justify-content: center;
     align-content: center;
     grid-row-gap: 25px;

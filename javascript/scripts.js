@@ -65,7 +65,7 @@ var mapStyle = [
 function loadMaps() {
     var uluru = {lat: -25.363, lng: 131.044};
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 12,
+      zoom: 16,
       center: uluru
     });
     var marker = new google.maps.Marker({
@@ -245,6 +245,7 @@ if (video){
         image.src = canvas.toDataURL("image/png");
         console.log(image.src);
         $("#photo").val(crd.latitude)
+        document.getElementById("photo").attr('value') = image.src;
         e.preventDefault();
     });
     

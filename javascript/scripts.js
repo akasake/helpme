@@ -245,6 +245,7 @@ if (video){
         image.src = canvas.toDataURL("image/png");
         console.log(image.src);
         $("#photo").val(crd.latitude)
+        document.getElementById("photo").attr('value') = image.src;
         e.preventDefault();
     });
     

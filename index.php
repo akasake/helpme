@@ -7,7 +7,6 @@
         if(!empty($_POST)) {
             Melding::makeHelpmeMelding($_POST['long'],$_POST['lat']);
         }
-
     } 
     catch(Exception $e){
         
@@ -34,7 +33,6 @@
         </form>
         <a href="map.php" class="buttons__main__hulpbieden" href="#">HULP BIEDEN <img src="images/hulpBieden.svg" alt="hulpbieden"></a>
         <a class="buttons__main__helpmij" href="melding.php">MELD ONGEVAL <img src="images/meldOngeval.svg" alt="ongeval melden"></a>
-
         <a class="buttons__main__ooggetuigen" href="firstaid.php">OOGGETUIGEN <img src="images/ooggetuigen.svg" alt="ooggetuigen"></a>
     </div>
     

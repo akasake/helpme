@@ -22,7 +22,7 @@
 <body>
 <div class="canvas">
     <?php include_once("lib/includes/nav.inc.php"); ?>       
-    <h1>Help is on the way!</h1>
+    <h1>Hulp komt er zo aan!</h1>
 
     <?php include_once("lib/includes/footer.inc.php"); ?>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP6tWYDigepitMGesI3xXYxg2mnvVDPAs&callback=loadMaps" async defer></script>

@@ -32,13 +32,13 @@
             <label class="hidden" for="geboortedatum" type="hidden" >geboortedatum</label>
             <input type="date" id="geboortedatum" placeholder="geboortedatum" name="geboortedatum">
         </div>
-        <div class="huis">
+        <div class="huis center">
             <label for="huis">in nood huis betreden mag</label>
             <label class="switch">
             <input type="checkbox" id="huis" name="huis">
             <span class="slider round"></span></label>
         </div>
-        <div class="risicogroep">
+        <div class="risicogroep center">
             <label for="risicogroep">hebt u een aandoening</label>
             <label class="switch">
             <input type="checkbox" id="risicogroep" name="risicogroep" onclick="risk()">
@@ -72,7 +72,7 @@
             </select>
         </div>
         </div>
-        <div class="arts">
+        <div class="arts center">
             <label for="arts">bent u hulpverlener</label>
             <label class="switch">
             <input type="checkbox" id="arts" name="arts" onclick="zorg()">

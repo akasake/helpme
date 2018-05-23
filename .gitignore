@@ -1,2 +1,2 @@
 lib/settings/db*
-lib/classes/Db*
+lib/classes/Db.class.php

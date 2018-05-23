@@ -30,10 +30,10 @@
         <?php include_once("lib/includes/nav.inc.php"); 
         if(isset($videos)): ?>
             <?php foreach($videos as $v): ?>
-            <iframe width="390" height="220" src="<?php echo $v->video?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="375" height="211" src="<?php echo $v->video?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <?php endforeach; ?> 
         <?php else: ?>  
-            <iframe width="390" height="220" src="<?php echo $video->video?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="375" height="211" src="<?php echo $video->video?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <?php endif; ?>
         <?php include_once("lib/includes/footer.inc.php"); ?>
     </div>

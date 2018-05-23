@@ -34,5 +34,49 @@
 
         }
 
+        public static function getCloseMeldingen($long, $lat){
+            $melding = Melding::getMeldingen();   
+            $mInRange = [];
+            $maxDistance = 2;
+            foreach($melding as $m){
+             
+                if(Melding::calculateWithinDistance($long, $lat, $m['longitude'], $m['latitude'], $maxDistance)){
+                    array_push($mInRange, $p);
+                }
+            }
+   
+            if(count($mInRange)<1) {
+                throw new Exception("There are no emergencies near you.");
+            }
+   
+            return $mInRange;
+        }
+
+            
+
+        
+
+        // function altered from the GeoDataSource.com 
+       // this function will calculate if the given long and lat of a post is within the given distance of the user
+       // return true or false
+       public static function calculateWithinDistance($longUser, $latUser, $longPost, $latPost, $maxDistance){
+        if($longPost != NULL && $latPost != NULL){
+             $theta = $longUser - $longPost;
+             $dist = sin(deg2rad($latUser)) * sin(deg2rad($latPost)) +  cos(deg2rad($latUser)) * cos(deg2rad($latPost)) * cos(deg2rad($theta));
+             $dist = acos($dist);
+             $dist = rad2deg($dist);
+             $miles = $dist * 60 * 1.1515;
+             $km = ($miles * 1.609344);
+             if($km<$maxDistance){
+                 return true;
+             }else{
+                 return false;
+             }
+        }else{
+            return false;
+        }
+         
+     }
+
     }
 ?>

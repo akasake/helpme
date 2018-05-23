@@ -10,32 +10,40 @@
             $conn = Db::getInstance();
             $statement = $conn->prepare("
                 INSERT INTO tl_melding
-                (user_id, longitude, latitude)
-                VALUES (:userId, :long, :lat)
+                (user_id, longitude, latitude, melder_id, type)
+                VALUES (:userId, :long, :lat, :melderId, 1)
             ");
             $statement->bindValue(":userId", $_SESSION['id']);
-            // Checks if the values are set, else return null
-            $statement->bindValue(":long", $long ?? null);
-            $statement->bindValue(":lat", $lat ?? null);
-            // time is filled automatically in database
-            header("location: done.php");
-			$statement->execute();
-
-        }
-        public static function makeMelding($long, $lat){
-            $conn = Db::getInstance();
-            $statement = $conn->prepare("
-                INSERT INTO tl_melding
-                (user_id, longitude, latitude)
-                VALUES (:userId, :long, :lat)
-            ");
-            $statement->bindValue(":userId", $_SESSION['id']);
+            $statement->bindValue(":melderId", $_SESSION['id']);            
             // Checks if the values are set, else return null
             $statement->bindValue(":long", $long ?? null);
             $statement->bindValue(":lat", $lat ?? null);
             // time is filled automatically in database
             $statement->execute();
-            header("location: done.php");
+            if($statement->execute()){
+                header("location: done.php");
+            }
+
+        }
+        public static function makeMelding($long, $lat, $img, $des){
+            $conn = Db::getInstance();
+            $statement = $conn->prepare("
+                INSERT INTO tl_melding
+                (longitude, latitude,  melder_id, type, image, description)
+                VALUES (:long, :lat, :userId, 2, :image, :des )
+            ");
+            $statement->bindValue(":userId", $_SESSION['id']);
+            // Checks if the values are set, else return null
+            $statement->bindValue(":long", $long ?? null);
+            $statement->bindValue(":lat", $lat ?? null);
+            $statement->bindValue(":image", $img ?? null);
+            $statement->bindValue(":des", $des ?? null);
+            // time is filled automatically in database
+            $statement->execute();
+            if($statement->execute()){
+                header("location: done.php");
+            }
+            
             
 
         }

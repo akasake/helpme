@@ -4,7 +4,10 @@
 
 
     try {
-        
+        if(!empty($_POST)) {
+            Melding::makeMelding($_POST['long'],$_POST['lat'], $_POST['photo'], $_POST['description']);
+        }
+
     } 
     catch(Exception $e){
         
@@ -34,9 +37,8 @@
             <textarea cols="30" rows="5" class="" name="description" id="description" placeholder="Describe here"></textarea>
         </div>
         <input type="hidden" class="form__melding__long" name="long">
-        <input type="hidden" class="form__melding__lat" name="lat">
-        <input type="hidden" name="melder" class="melder" value="<?php echo $_SESSION['id'] ?>">        
-        <button id="send" type="submit">send</button>
+        <input type="hidden" class="form__melding__lat" name="lat">    
+        <button id="send" type="submit" name="meldingbtn">send</button>
     </form>
     
     

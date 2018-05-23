@@ -203,6 +203,35 @@ nav
 {
     text-align: center;
 }
+.setting input
+{
+    text-align: center;
+    width: 290px;
+    border: 0px;
+    padding: 15px;
+    background-color: #F3F3F3; 
+    margin: 5px 0px;
+    border-radius: 25px;
+}
+.setting select
+{
+    text-align: center;
+    width: 290px;
+    border: 0px;
+    padding: 15px;
+    background-color: #F3F3F3; 
+    margin: 5px 0px;
+    border-radius: 25px;
+}
+.btn__opslaan
+  {
+      text-align: center;
+      background-color: #485059;
+      color: #F3F3F3;
+      padding: 10px 15px;
+      border: 0px;
+      border-radius: 25px;
+  }
 .switch {
     position: relative;
     display: inline-block;
@@ -314,17 +343,26 @@ nav
       border: 0px;
       border-radius: 25px;
   }
-  btn_cam
-  {
-      background-color: #485059;
-  }
   .hidden{
       display: none;
   }
-
+  .meldingInfo
+  {
+      background-color: #C4C4C4;
+      color: #fff;
+      padding: 15px;
+  }
+  .melding
+  {
+      border: 1px solid #485059;
+      margin-bottom: 10px
+  }
+  .red
+    {
+    color: #FF0000;
+    }
   .canvas{
     width: 375px;
-    height: 667px;
     margin: auto;
     text-align: center;
     background-color: #fff;

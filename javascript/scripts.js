@@ -105,9 +105,30 @@ function loadMaps() {
                 for (let i = 0; i < markers.length; i++) {
                     let position = new google.maps.LatLng(markers[i]['latitude'], markers[i]['longitude']);
                     let content = 
-                    `<div id="mapInfo">
-                       <h4>${markers[i]['firstname']} ${markers[i]['lastname']}</h4>
-                    </div>`;
+                    `<div class="mapdetail">
+                    <h2>${markers[i]['firstname']} ${markers[i]['lastname']}</h2>
+                    <div class="info__details">
+                        <div class="risico">
+                            <h3><span class="red">risicopatiënt</span></h3>
+                            <h3>Aandoening</h3>
+                            <p>Diabetis, Epilepsie</p>
+                        </div>
+
+                        <div class="adres">
+                            <h3>Adres</h3>
+                            <p>Rue du dis 5</p>
+                            <p>Montréal</p>
+                        </div>
+                    </div>
+                    <div class="buttons__details">
+                        <a class="buttons__details__route" href="#"><img src="images/route.svg" alt="Route">ROUTE</a>
+                        <a class="buttons__details__bel" href="#"><img src="images/bel.svg" alt="Bellen">BELLEN</a>
+
+                        <a class="buttons__details__onderweg" href="#">ONDERWEG</a>
+                        <a class="buttons__details__hulp" href="#">EXTRA HULP</a>
+                    </div> 
+                    
+                </div>`;
 
                     let marker = new google.maps.Marker({
                         position: position,

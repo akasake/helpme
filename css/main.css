@@ -282,22 +282,26 @@ nav
     transition: .4s;
   }
 
-  .center{
+.center
+{
       padding: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
 
-  }
-  .center label{
+}
+.center label
+{
       padding: 0 5px;
-  }
+}
   
-  input:checked + .slider {
+input:checked + .slider 
+{
     background-color: #138F49;
-  }
+}
   
-  input:focus + .slider {
+  input:focus + .slider 
+  {
     box-shadow: 0 0 1px #138F49;
   }
   
@@ -318,90 +322,90 @@ nav
   /*camera*/
   #snap
   {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      background-color: #485059;
-      color: #F3F3F3;
-      padding: 10px 15px;
-      border: 0px;
-      border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #485059;
+    color: #F3F3F3;
+    padding: 10px 15px;
+    border: 0px;
+    border-radius: 25px;
   }
   #tryAgain
   {
-      text-align: center;
-      background-color: #485059;
-      color: #F3F3F3;
-      padding: 10px 15px;
-      border: 0px;
-      border-radius: 25px;
+    text-align: center;
+    background-color: #485059;
+    color: #F3F3F3;
+    padding: 10px 15px;
+    border: 0px;
+    border-radius: 25px;
   }
   #save
   {
-      text-align: center;
-      background-color: #485059;
-      color: #F3F3F3;
-      padding: 10px 15px;
-      border: 0px;
-      border-radius: 25px;
+    text-align: center;
+    background-color: #485059;
+    color: #F3F3F3;
+    padding: 10px 15px;
+    border: 0px;
+    border-radius: 25px;
   }
   .description
   {
-      margin: 15px 15px;
+    margin: 15px 15px;
   }
   .description label
   {
-      display: none;
+    display: none;
   }
   .description textarea
   {
-      background-color: #F3F3F3;
-      border: none;
-      border-radius: 25px;
-      padding: 10px;
+    background-color: #F3F3F3;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
   }
   #send
   {
-      text-align: center;
-      background-color: #485059;
-      color: #F3F3F3;
-      padding: 10px 15px;
-      border: 0px;
-      border-radius: 25px;
+    text-align: center;
+    background-color: #485059;
+    color: #F3F3F3;
+    padding: 10px 15px;
+    border: 0px;
+    border-radius: 25px;
   }
   .hidden{
-      display: none;
+    display: none;
   }
   .meldingInfo
   {
-      background-color: #C4C4C4;
-      color: #fff;
-      padding: 15px;
+    background-color: #C4C4C4;
+    color: #fff;
+    padding: 15px;
   }
   .melding
-  {
-      border: 1px solid #485059;
-      margin-bottom: 10px
-  }
-  .red
-    {
-    color: #FF0000;
-    }
+{
+    border: 1px solid #485059;
+    margin-bottom: 10px
+}
+.red
+{
+   color: #FF0000;
+}
 .img_done
-    {
-        width: 80%;
-        margin-top: 5px;
-        margin-bottom: 75px;
-    }
+{
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 75px;
+}
 .btn_done 
 {
     text-align: center;
-      background-color: #485059;
-      color: #F3F3F3;
-      padding: 10px 15px;
-      border: 0px;
-      border-radius: 25px;
-      margin-top: 25px;
+    background-color: #485059;
+    color: #F3F3F3;
+    padding: 10px 15px;
+    border: 0px;
+    border-radius: 25px;
+    margin-top: 25px;
 }
  /*mapdetail*/
  .info__details
@@ -459,14 +463,14 @@ nav
 .buttons__details__hulp
 {
     text-align: center;
-      color: #485059;
-      padding: 10px 15px;
-      border: 1px solid #485059;
-      border-radius: 25px;
-      margin-top: 25px;
-      width: 90%;
-      justify-self: center;
-        align-self: center;
+    color: #485059;
+    padding: 10px 15px;
+    border: 1px solid #485059;
+    border-radius: 25px;
+    margin-top: 25px;
+    width: 90%;
+    justify-self: center;
+    align-self: center;
 }
 .buttons__details__route img
 {
@@ -478,7 +482,8 @@ nav
     padding-top: 0px;
     width: 80%;
 }
-  .canvas{
+  .canvas
+  {
     width: 375px;
     min-height: 600px;
     margin: auto;

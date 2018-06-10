@@ -106,7 +106,7 @@ function loadMaps() {
                     let position = new google.maps.LatLng(markers[i]['latitude'], markers[i]['longitude']);
                     let content = 
                     `<div id="mapInfo">
-                       helpme
+                       <h4>${markers[i]['firstname']} ${markers[i]['lastname']}</h4>
                     </div>`;
 
                     let marker = new google.maps.Marker({

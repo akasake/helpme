@@ -78,6 +78,25 @@
             return $mInRange;
         }
 
+        public static function checkCloseMeldingen($long, $lat){
+            $melding = Melding::getMeldingen();   
+            $mInRange = [];
+            $maxDistance = 2;
+            foreach($melding as $m){
+             
+                if(Melding::calculateWithinDistance($long, $lat, $m['longitude'], $m['latitude'], $maxDistance)){
+                    array_push($mInRange, $m);
+                }
+            }
+   
+            if(count($mInRange)<1) {
+                return false;
+            }else{
+                return true;
+            }
+   
+           
+        }
             
 
         

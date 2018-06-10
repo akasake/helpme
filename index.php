@@ -2,6 +2,7 @@
     include_once("lib/settings/config.php");
     $title = "HELPME";
     // check with cookie if is firsttime user if yes redirect to first_visit.php 
+    $check = User::showNotif($_SESSION['id']);
 
     try {
         if(!empty($_POST)) {
@@ -24,6 +25,10 @@
 <body>
 <div class="canvas">    
     <?php include_once("lib/includes/nav.inc.php"); ?>  
+    <?php if($check = true):  ?>
+     <?php include_once("lib/includes/notif.inc.php"); ?>         
+    <?php endif; ?>
+    <img src="" alt="">
     
     <div class="buttons">
         <form  class="form__main__helpmij" action="" method="post">

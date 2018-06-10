@@ -22,7 +22,10 @@
 </head>
 <body>
 <div class="canvas">
-    <?php include_once("lib/includes/nav.inc.php"); ?>       
+    <?php include_once("lib/includes/nav.inc.php"); ?>  
+    <?php if($check = true):  ?>
+     <?php include_once("lib/includes/notif.inc.php"); ?>         
+    <?php endif; ?>     
     <div id="map"></div>
 
     <?php include_once("lib/includes/footer.inc.php"); ?>

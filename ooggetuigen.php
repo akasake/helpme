@@ -21,6 +21,9 @@
 <body>
     <div class="canvas"> 
         <?php include_once("lib/includes/nav.inc.php"); ?>   
+        <?php if($check = true):  ?>
+     <?php include_once("lib/includes/notif.inc.php"); ?>         
+    <?php endif; ?>
         
         <div class="buttons">
             <a class="buttons__main__instructies" href="firstaid.php">INSTRUCTIES <img src="images/instructies.svg" alt="instructies"></a>

@@ -347,5 +347,22 @@
             $statement->execute();
             return $statement->fetchAll(PDO::FETCH_ASSOC);   
         }
+
+        public static function showNotif($id) {
+            $conn = Db::getInstance();
+            $statement = $conn->prepare("
+                SELECT tl_user.showNotif FROM tl_user
+                WHERE tl_user.id = :userId
+            ");
+            $statement->bindValue(":userId", $id);
+            $statement->execute();
+            $show = $statement->fetch();
+            if( $show != 1) {
+                return false;
+            }else{
+                return true;
+            }
+            
+        }
     }
 ?>

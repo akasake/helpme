@@ -242,42 +242,30 @@ if (video){
 
     document.getElementById("save").addEventListener("click", function(e) {
         var image = new Image();
-        image.src = canvas.toDataURL("image/png");
-        console.log(image.src);
+        image.onload = function(){
+            image.src = canvas.toDataURL("image/png");
+        //console.log(image.src);
         $("#photo").val(image.src)
 
         $("#photo").attr('value',image.src);
+        }
+        
         e.preventDefault();
     });
     
 }
 
-function risk() {
-    // Get the checkbox
-    var checkBox = document.getElementById("risicogroep");
-    // Get the output text
-    var text = document.getElementById("ifrisico");
   
     // If the checkbox is checked, display the output text
-    if (checkBox.checked == true){
-      text.classList.remove("hidden");
-    } else {
-        text.classList.add("hidden");
-    }
-  }
-  function zorg() {
-    // Get the checkbox
-    var checkBox = document.getElementById("arts");
-    // Get the output text
-    var text = document.getElementById("ifarts");
-  
-    // If the checkbox is checked, display the output text
-    if (checkBox.checked == true){
-      text.classList.remove("hidden");
-    } else {
-        text.classList.add("hidden");
-    }
-  }  
+    $("#risicogroep").click(function(){
+        $("#ifrisico").toggle("slow");
+    });
+
+    $("#arts").click(function(){
+        $("#ifarts").toggle("slow");
+    });
+
+
 
 
 
@@ -300,3 +288,43 @@ else if(navigator.getUserMedia) { // Standard
     }, errBack);
 }
 */
+
+
+
+$(document).ready(function ()
+{
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        var long = position.coords.longitude
+        console.log(long);
+        var lat = position.coords.latitude
+        console.log(lat);
+        $("#notification").attr("class", "hidden");  
+        var audio = new Audio('sounds/light.mp3');        
+        audio.pause();                
+        
+    
+    var interval = setInterval(function(){
+        $.ajax({
+            method: "POST",
+            url: "lib/ajax/notification.php",
+            data: { long: long, lat: lat },
+        })
+            .done(function (res) {
+                
+                if (res.status == "success") {
+                    //console.log("there are things")
+                    $("#notification").show("slow");
+                    audio.play();
+                }else{
+                    $("#notification").hide("slow");    
+                    audio.pause();                
+                }
+            });
+    }, 10000)
+    })
+})

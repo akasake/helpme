@@ -408,6 +408,12 @@ input:checked + .slider
     margin-top: 25px;
 }
  /*mapdetail*/
+ .mapdetail
+{
+    width: 350px;
+    margin: auto;
+    text-align: center;
+}
  .info__details
  {
      text-align: left;

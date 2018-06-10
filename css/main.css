@@ -402,7 +402,82 @@ nav
       border: 0px;
       border-radius: 25px;
       margin-top: 25px;
+}
+ /*mapdetail*/
+ .info__details
+ {
+     text-align: left;
+     padding-left: 50px
+ }
+.buttons__details
+{
+    display: grid; 
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 20% 20% 20% 20%;
+    justify-content: center;
+    align-content: center;
+    grid-row-gap: 15px;
+    margin-top: 15px; 
+}
+.buttons__details__route
+{
+    background-color: #F3F3F3;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: #FF0000;
+    width: 90%;
+    height: 90px;
+    justify-self: center;
+    align-self: center;
 }   
+.buttons__details__bel
+{
+    background-color: #F3F3F3;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: #FF0000;
+    width: 90%;
+    height: 90px;
+    justify-self: center;
+    align-self: center;
+}  
+.buttons__details__onderweg
+{
+    text-align: center;
+      background-color: #485059;
+      color: #F3F3F3;
+      padding: 10px 15px;
+      border: 0px;
+      border-radius: 25px;
+      margin-top: 25px;
+      width: 90%;
+      justify-self: center;
+        align-self: center;
+}
+.buttons__details__hulp
+{
+    text-align: center;
+      color: #485059;
+      padding: 10px 15px;
+      border: 1px solid #485059;
+      border-radius: 25px;
+      margin-top: 25px;
+      width: 90%;
+      justify-self: center;
+        align-self: center;
+}
+.buttons__details__route img
+{
+    padding-top: 5px;
+    width: 100%;
+}
+.buttons__details__bel img
+{
+    padding-top: 0px;
+    width: 80%;
+}
   .canvas{
     width: 375px;
     min-height: 600px;

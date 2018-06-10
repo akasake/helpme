@@ -25,7 +25,7 @@
     <h2>Hulp komt er zo aan!</h2>
     <img class="img_done" src="images/successMessage.svg" alt="success">
     <a class="btn_done" href="firstaid.php">INSTRUCTIES</a>
-    <a class="btn_done" href="#">VOICE CHAT</a>
+    <a class="btn_done" href="voicechat.php">VOICE CHAT</a>
 
     <?php include_once("lib/includes/footer.inc.php"); ?>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP6tWYDigepitMGesI3xXYxg2mnvVDPAs&callback=loadMaps" async defer></script>

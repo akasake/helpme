@@ -37,8 +37,8 @@
             </div>
         </div>
         <div class="buttons__details">
-            <a class="buttons__details__route" href="#">ROUTE<img src="images/route.svg" alt="Route"></a>
-            <a class="buttons__details__bel" href="#">BELLEN<img src="images/bel.svg" alt="Bellen"></a>
+            <a class="buttons__details__route" href="#"><img src="images/route.svg" alt="Route">ROUTE</a>
+            <a class="buttons__details__bel" href="#"><img src="images/bel.svg" alt="Bellen">BELLEN</a>
 
             <a class="buttons__details__onderweg" href="#">ONDERWEG</a>
             <a class="buttons__details__hulp" href="#">EXTRA HULP</a>

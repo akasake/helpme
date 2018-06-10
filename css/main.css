@@ -425,7 +425,7 @@ nav
     text-align: center;
     padding: 10px 30px;
     border-radius: 25px;
-    color: #FF0000;
+    color: #485059;
     width: 90%;
     height: 90px;
     justify-self: center;
@@ -437,7 +437,7 @@ nav
     text-align: center;
     padding: 10px 30px;
     border-radius: 25px;
-    color: #FF0000;
+    color: #485059;
     width: 90%;
     height: 90px;
     justify-self: center;
@@ -470,7 +470,7 @@ nav
 }
 .buttons__details__route img
 {
-    padding-top: 5px;
+    padding-top: 0px;
     width: 100%;
 }
 .buttons__details__bel img

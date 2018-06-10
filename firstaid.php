@@ -1,5 +1,7 @@
 <?php
     include_once("lib/settings/config.php");
+    include_once("lib/helpers/ehbo.class.php");
+    include_once("lib/classes/Db.class.php");
     $title = "INSTRUCTIES";
 
     try {

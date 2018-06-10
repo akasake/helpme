@@ -309,19 +309,20 @@ input:checked + .slider
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-  }
+}
   
   /* Rounded sliders */
-  .slider.round {
+.slider.round 
+{
     border-radius: 34px;
-  }
+}
   
   .slider.round:before {
     border-radius: 50%;
-  }
-  /*camera*/
-  #snap
-  {
+}
+/*camera*/
+#snap
+{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -330,59 +331,59 @@ input:checked + .slider
     padding: 10px 15px;
     border: 0px;
     border-radius: 25px;
-  }
-  #tryAgain
-  {
+}
+#tryAgain
+{
     text-align: center;
     background-color: #485059;
     color: #F3F3F3;
     padding: 10px 15px;
     border: 0px;
     border-radius: 25px;
-  }
-  #save
-  {
+}
+#save
+{
     text-align: center;
     background-color: #485059;
     color: #F3F3F3;
     padding: 10px 15px;
     border: 0px;
     border-radius: 25px;
-  }
-  .description
-  {
+}
+.description
+{
     margin: 15px 15px;
-  }
-  .description label
-  {
+}
+.description label
+{
     display: none;
-  }
-  .description textarea
-  {
+}
+.description textarea
+{
     background-color: #F3F3F3;
     border: none;
     border-radius: 25px;
     padding: 10px;
-  }
-  #send
-  {
+}
+#send
+{
     text-align: center;
     background-color: #485059;
     color: #F3F3F3;
     padding: 10px 15px;
     border: 0px;
     border-radius: 25px;
-  }
-  .hidden{
+}
+.hidden{
     display: none;
   }
-  .meldingInfo
+.meldingInfo
   {
     background-color: #C4C4C4;
     color: #fff;
     padding: 15px;
   }
-  .melding
+.melding
 {
     border: 1px solid #485059;
     margin-bottom: 10px
@@ -487,6 +488,29 @@ input:checked + .slider
 {
     padding-top: 0px;
     width: 80%;
+}
+
+.voicechat
+{
+    display: grid; 
+    grid-template-columns: 80%;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
+    align-content: center;
+    grid-row-gap: 200px;
+    margin-top: 15px; 
+}
+.voice
+{
+    margin: auto;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.voiceb
+{
+    margin: auto;
+    text-align: center;
 }
   .canvas
   {

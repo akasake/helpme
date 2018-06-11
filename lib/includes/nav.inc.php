@@ -3,6 +3,8 @@
     <?php if($title == "INSTELLINGEN"):?> 
     <h1 class="pageTitle"><?php echo $title ?></h1>
     <a class="close" href="index.php"><img  src="images/close.svg" alt="close"></a>
+    <?php elseif($title == "account"):?> 
+    <a class="logo" href="index.php"><img src="images\logo.svg" alt="logo"></a>
     <?php else: ?>
     <h1 class="pageTitle"><?php echo $title ?></h1>
     <a class="back" href="index.php"><img  src="images/back.svg" alt="back"></a>

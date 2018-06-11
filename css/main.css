@@ -66,6 +66,24 @@ nav
    justify-self: center;
    font-size: 1.2em;
 }
+.register
+{
+    padding-top: 25px;
+}
+.form__item__label
+{
+    text-align: left;
+}
+.form__item__input
+{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #485059;
+    padding: 10px 15px;
+    border: 1px solid #485059;
+    border-radius: 25px;
+    width: 60%;
+}
 /*index en ooggetuigen*/
 .buttons
 {

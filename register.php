@@ -3,6 +3,7 @@
 include_once('lib/classes/User.class.php');
 include_once('lib/classes/Db.class.php');
 include_once('lib/helpers/Security.class.php');
+$title = "account";
     $error = [];
 
     if(!empty($_POST)){
@@ -70,53 +71,55 @@ include_once('lib/helpers/Security.class.php');
     <title><?php echo $title ?></title>
 </head>
 <body>
-<div class="canvas">    
-    
-<?php foreach($error as $e) : ?>
-                    <p><?php echo $e; ?></p>
-            <?php endforeach; ?>
+<div class="canvas">   
+    <?php include_once("lib/includes/nav.inc.php"); ?>   
+    <div class="register">  
+        <?php foreach($error as $e) : ?>
+                            <p><?php echo $e; ?></p>
+                    <?php endforeach; ?>
 
-            <form class"form" action="" method="post">
+                    <form class"form" action="" method="post">
 
-                <div class="form__item">
-                    <label for="firstName">first name</label>
-                    <br>
-                    <input class="form__item__input" type="text" id="firstName" name="firstName" value="<?php echo (!empty($_POST['firstName']) ? $_POST['firstName'] : ""); ?>">
-                </div>
+                        <div class="form__item">
+                            <label for="firstName">firstname</label>
+                            <br>
+                            <input class="form__item__input" type="text" id="firstName" name="firstName" value="<?php echo (!empty($_POST['firstName']) ? $_POST['firstName'] : ""); ?>">
+                        </div>
 
-                <div class="form__item">
-                    <label for="lastName">last name</label>
-                    <br>
-                    <input class="form__item__input" type="text" id="lastName" name="lastName" value="<?php echo (!empty($_POST['lastName']) ? $_POST['lastName'] : ""); ?>">
-                </div>
+                        <div class="form__item">
+                            <label for="lastName">lastname</label>
+                            <br>
+                            <input class="form__item__input" type="text" id="lastName" name="lastName" value="<?php echo (!empty($_POST['lastName']) ? $_POST['lastName'] : ""); ?>">
+                        </div>
 
-                <div class="form__item">
-                    <label for="username">username</label>
-                    <br>
-                    <input class="form__item__input" type="text" id="username" name="username" value="<?php echo (!empty($_POST['username']) ? $_POST['username'] : ""); ?>">
-                </div>
+                        <div class="form__item">
+                            <label for="username">username</label>
+                            <br>
+                            <input class="form__item__input" type="text" id="username" name="username" value="<?php echo (!empty($_POST['username']) ? $_POST['username'] : ""); ?>">
+                        </div>
 
-                <div class="form__item">
-                    <label for="password">password</label>
-                    <br>
-                    <input class="form__item__input" type="password" id="password" name="password" value="<?php echo (!empty($_POST['password']) ? $_POST['password'] : ""); ?>">
-                </div>
+                        <div class="form__item">
+                            <label for="password">password</label>
+                            <br>
+                            <input class="form__item__input" type="password" id="password" name="password" value="<?php echo (!empty($_POST['password']) ? $_POST['password'] : ""); ?>">
+                        </div>
 
-                <div class="form__item">
-                    <label for="passwordConfirm">confirm password</label>
-                    <br>
-                    <input class="form__item__input" type="password" id="passwordConfirm" name="passwordConfirm" value="<?php echo (!empty($_POST['passwordConfirm']) ? $_POST['passwordConfirm'] : ""); ?>">
-                </div>
+                        <div class="form__item">
+                            <label for="passwordConfirm">confirm password</label>
+                            <br>
+                            <input class="form__item__input" type="password" id="passwordConfirm" name="passwordConfirm" value="<?php echo (!empty($_POST['passwordConfirm']) ? $_POST['passwordConfirm'] : ""); ?>">
+                        </div>
 
-                <div class="form__item">
-                    <input class="button button--long" type="submit" value="create account">
-                </div>
+                        <div class="form__item">
+                            <input class="btn__opslaan button button--long" type="submit" value="create account">
+                        </div>
 
-                <a class="link" href="login.php">Already have an account?</a>
-            
-            </form>
+                        <a class="link" href="login.php">Already have an account?</a>
+                    
+                    </form>
     
     <?php include_once("lib/includes/footer.inc.php"); ?>
+    </div>      
 </div>    
 </body>
 </html> 

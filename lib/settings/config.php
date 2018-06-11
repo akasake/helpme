@@ -22,7 +22,7 @@
     if(!isset($_SESSION['id'])) {
         header("Location: login.php");
     }else if(isset($_SESSION['id'])){
-        header("Location: index.php");
+        
     }
     }catch(Exception $e){
 

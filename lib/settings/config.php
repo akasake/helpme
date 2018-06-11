@@ -20,14 +20,9 @@
     try{
        // registers user
     if(!isset($_SESSION['id'])) {
-        $u = new User;
-        $username = rand(0,100).".".rand(0,100).".".rand(0,100).".".rand(0,100);
-        $u->setUsername($username);
-        //$cookieVal = $username;
-        // remember that the user has logged in (cookies)
-        //setcookie('login', $cookieVal, time()+60*60*24*360); //+1 year 
-        $u->register();
-        $u->login();
+        header("Location: login.php");
+    }else if(isset($_SESSION['id'])){
+        header("Location: index.php");
     }
     }catch(Exception $e){
 

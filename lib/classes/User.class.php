@@ -36,43 +36,50 @@
 
         }
 
-        public function updateEmail() {
-            $conn = Db::getInstance();
-            $statement = $conn->prepare("
-                UPDATE tl_user
-                SET tl_user.email = :email
-                WHERE tl_user.id = :userId
-            ");
-            $statement->bindValue(":email", $this->getEmailNew());
-            $statement->bindValue(":userId", $this->getUserId());
-            if($statement->execute()) {
-                return true;
+        public function setPassword($password)
+        {
+            if(empty($password)) {
+                throw new Exception("Fill in your password, please!");
             }
-            return false;
+                $this->password = strip_tags($password);
+
+                return $this;
+        } 
+        public function getPassword()
+        {
+                return htmlspecialchars($this->password);
         }
 
-        public function validateEmailUpdate() {
-            if($this->emailCorrect() && $this->emailAvailable()) {
+        public function canIRegister(){
+            if($this->usernameAvailable()){
                 return true;
+            } else {
+                throw new Exception("You are not able to register. Try again.");
             }
-            return false;
         }
 
-        private function emailCorrect() {
+        public function canILogin(){
             $conn = Db::getInstance();
             $statement = $conn->prepare("
-                SELECT tl_user.email FROM tl_user
-                WHERE tl_user.email = :email AND tl_user.id = :userId
+                SELECT password FROM tl_user WHERE username = :username 
             ");
-            $statement->bindValue(":email", $this->getemail());
-            $statement->bindValue(":userId", $this->getUserId());
+
+            $statement->bindValue(":username", $this->getUsername());
             $statement->execute();
-            if($statement->rowCount() != 1) {
-                throw new Exception("Your current email isn't correct.");
-            }
-            return true;
-        }
 
+            if($statement->rowCount() == 1) {
+                $result = $statement->fetch(PDO::FETCH_OBJ);
+        
+                if(password_verify($this->getPassword(), $result->password)) {
+                    return true;
+                } else {
+                    throw new Exception("Password or username not correct.");
+                }
+            } else {
+                throw new Exception("Password or username not correct.");
+            }
+        }
+       
         /**
          * Get the value of userId
          */ 
@@ -93,35 +100,7 @@
                 return $this;
         }
 
-        /**
-         * Get the value of email
-         */ 
-        public function getEmail()
-        {
-                return htmlspecialchars($this->email);
-        }
-
-        /**
-         * Set the value of email
-         *
-         * @return  self
-         */ 
-        public function setEmail($email)
-        {
-            if(empty($email)) {
-                throw new Exception("Fill in your email address, please!");
-            }
-                $this->email = strip_tags($email);
-                $this->email = filter_var($this->email, FILTER_SANITIZE_EMAIL);
-
-                if(filter_var($this->email, FILTER_VALIDATE_EMAIL)){
-                    return true;
-                } else {
-                    throw new Exception("Fill in a valid email address.");
-                }
-
-                return $this;
-        }
+       
 
         /**
          * Updates the avatar for the user who's logged in
@@ -231,30 +210,6 @@
                 return $this;
         }
 
-        /** 
-         * Feature to check if the email is available
-        */
-
-        private function emailAvailable(){
-            $conn = Db::getInstance();
-            $statement = $conn->prepare("
-                SELECT * FROM tl_user WHERE email = :email
-            ");
-
-            if($this->getUserId()) {
-                $statement->bindValue(":email", $this->getEmailNew());
-            }else{
-                $statement->bindValue(":email", $this->getEmail());
-            }
-            
-            $statement->execute();
-            
-            if($statement->rowCount() > 0){
-                throw new Exception("This email address is already in use.");
-            } else {
-                return true;
-            }
-        }
 
         /** 
          * Feature to check if the username is available
@@ -276,7 +231,6 @@
             }
         }
 
-
         // first log in, you are asigned a unique username
         public function login(){
             $conn = Db::getInstance();
@@ -295,6 +249,14 @@
             header('Location: index.php');
         }
 
+        public function logout(){
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+            session_destroy();
+            header('Location: login.php');
+        }
+
         /** 
          * Function to assign a unique username 
         */
@@ -302,13 +264,21 @@
         public function register(){
             $conn = Db::getInstance();
             $statement = $conn->prepare("
-                INSERT INTO tl_user (first_name, last_name, username)
-                VALUES (:firstName, :lastName, :username)
+                INSERT INTO tl_user (firstname, lastname, username, password)
+                VALUES (:firstName, :lastName, :username, :password)
             ");
 
-            $statement->bindValue(":firstName", "");
-            $statement->bindValue(":lastName", "");
+            $options = [
+                "cost" => "12"
+            ];
+                
+            $hash = password_hash($this->getPassword(), PASSWORD_DEFAULT, $options);
+
+            $statement->bindValue(":firstName", $this->getFirstName());
+            $statement->bindValue(":lastName", $this->getLastName());
             $statement->bindValue(":username", $this->getUsername());
+            $statement->bindValue(":password", $hash);
+
             $statement->execute();
 
             

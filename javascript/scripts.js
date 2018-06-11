@@ -263,13 +263,11 @@ if (video){
 
     document.getElementById("save").addEventListener("click", function(e) {
         var image = new Image();
-        image.onload = function(){
-            image.src = canvas.toDataURL("image/png");
-        //console.log(image.src);
-        $("#photo").val(image.src)
-
+       
+        image.src = canvas.toDataURL("image/png");
+        console.log(image.src);
+        $("#photo").val(image.src);
         $("#photo").attr('value',image.src);
-        }
         
         e.preventDefault();
     });
